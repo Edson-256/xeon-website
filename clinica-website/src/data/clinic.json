@@ -1,0 +1,45 @@
+{
+  "name": "Clínica de Oncologia Cirúrgica",
+  "tagline": "Cuidando do ser, não apenas da doença",
+  "siteUrl": "https://www.clinicaoncologia.com.br",
+
+  "doctor": {
+    "name": "Dr(a). [Nome Completo]",
+    "crm": "CRM-SP 000000",
+    "rqe": "RQE 00000",
+    "specialty": "Oncologia Cirúrgica"
+  },
+
+  "company": {
+    "legalName": "[Razão Social da Clínica]",
+    "cnpj": "00.000.000/0001-00"
+  },
+
+  "contact": {
+    "phone": "+55 11 0000-0000",
+    "whatsapp": "+55 11 00000-0000",
+    "email": "contato@clinicaoncologia.com.br",
+    "privacyEmail": "privacidade@clinicaoncologia.com.br"
+  },
+
+  "address": {
+    "street": "Rua [Nome da Rua], 000",
+    "complement": "Sala 00",
+    "neighborhood": "[Bairro]",
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "00000-000",
+    "country": "BR"
+  },
+
+  "hours": {
+    "weekdays": "Segunda a Sexta: 08h às 18h",
+    "saturday": "Sábado: Fechado",
+    "formatted": "Mo-Fr 08:00-18:00"
+  },
+
+  "social": {
+    "instagram": "https://instagram.com/clinicaoncologia",
+    "youtube": ""
+  }
+}

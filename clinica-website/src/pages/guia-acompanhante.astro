@@ -1,0 +1,305 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Guia do Acompanhante"
+  description="Um guia para familiares e amigos que acompanham pacientes em tratamento oncológico. Você não está sozinho nessa jornada."
+  breadcrumbItems={[{ label: 'Guia do Acompanhante' }]}
+>
+  <section class="guide-intro">
+    <p class="intro-highlight">
+      <strong>Você está aqui por alguém que ama.</strong>
+    </p>
+    <p>
+      Acompanhar alguém em tratamento oncológico é um ato de amor — e também
+      um desafio. Este guia foi criado para ajudar você a entender o processo,
+      saber como apoiar e, igualmente importante, cuidar de si mesmo.
+    </p>
+  </section>
+
+  <section class="guide-role">
+    <h2>Seu papel é importante</h2>
+
+    <article class="info-card">
+      <h3>Por que sua presença faz diferença</h3>
+      <ul>
+        <li>Duas pessoas lembram mais detalhes das consultas</li>
+        <li>Você oferece suporte emocional nos momentos difíceis</li>
+        <li>Pode ajudar a organizar medicações e compromissos</li>
+        <li>Sua presença transmite segurança e conforto</li>
+      </ul>
+    </article>
+
+    <article class="info-card">
+      <h3>Como equilibrar cuidado e autocuidado</h3>
+      <ul>
+        <li>Aceite ajuda de outras pessoas — você não precisa fazer tudo sozinho</li>
+        <li>Mantenha algumas atividades que trazem prazer para você</li>
+        <li>Permita-se sentir cansaço, frustração ou tristeza — são sentimentos normais</li>
+        <li>Busque grupos de apoio para cuidadores, se necessário</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="guide-treatment">
+    <h2>Entendendo o tratamento</h2>
+
+    <article class="timeline">
+      <h3>Linha do tempo típica</h3>
+      <p>Cada caso é único, mas muitos tratamentos seguem um padrão geral:</p>
+
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <span class="timeline-number">1</span>
+          <div class="timeline-content">
+            <h4>Diagnóstico e Estadiamento</h4>
+            <p>Exames para entender o tipo e extensão da doença.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-number">2</span>
+          <div class="timeline-content">
+            <h4>Planejamento</h4>
+            <p>Equipe médica define a melhor estratégia de tratamento.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-number">3</span>
+          <div class="timeline-content">
+            <h4>Tratamento</h4>
+            <p>Pode incluir cirurgia, quimioterapia, radioterapia ou combinações.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-number">4</span>
+          <div class="timeline-content">
+            <h4>Recuperação</h4>
+            <p>Período de retorno às atividades normais, com acompanhamento.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-number">5</span>
+          <div class="timeline-content">
+            <h4>Seguimento</h4>
+            <p>Consultas periódicas para monitoramento a longo prazo.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="guide-practical">
+    <h2>Na prática</h2>
+
+    <article class="info-card">
+      <h3>O que levar para consultas e procedimentos</h3>
+      <ul>
+        <li>Documentos do paciente (RG, CPF, cartão do convênio)</li>
+        <li>Lista atualizada de medicamentos</li>
+        <li>Exames e laudos recentes</li>
+        <li>Caderno e caneta para anotações</li>
+        <li>Garrafa de água e um lanche leve</li>
+        <li>Algo para distrair durante esperas (livro, celular carregado)</li>
+        <li>Casaco — hospitais costumam ser frios</li>
+      </ul>
+    </article>
+
+    <article class="info-card">
+      <h3>Perguntas que você pode fazer</h3>
+      <ul>
+        <li>Pode me explicar novamente o que vai acontecer?</li>
+        <li>Quais sinais devemos observar em casa?</li>
+        <li>Quando devemos entrar em contato com vocês?</li>
+        <li>Como posso ajudar na recuperação?</li>
+        <li>Existem recursos de apoio para a família?</li>
+      </ul>
+    </article>
+
+    <article class="info-card">
+      <h3>Sinais de alerta para observar</h3>
+      <p>Procure atendimento se o paciente apresentar:</p>
+      <ul class="alert-list">
+        <li>Febre acima de 38°C</li>
+        <li>Sangramento que não para</li>
+        <li>Dor intensa que não cede com medicação</li>
+        <li>Falta de ar ou dificuldade para respirar</li>
+        <li>Vômitos persistentes ou incapacidade de se alimentar</li>
+        <li>Confusão mental ou alteração de comportamento</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="guide-selfcare">
+    <h2>Cuidando de você</h2>
+
+    <article class="info-card info-card--highlight">
+      <h3>Reconhecendo o desgaste emocional</h3>
+      <p>É normal sentir:</p>
+      <ul>
+        <li>Cansaço físico e mental</li>
+        <li>Ansiedade e preocupação constantes</li>
+        <li>Irritabilidade ou impaciência</li>
+        <li>Tristeza ou sensação de impotência</li>
+        <li>Culpa por ter esses sentimentos</li>
+      </ul>
+      <p>
+        <strong>Esses sentimentos são válidos.</strong> Cuidar de alguém doente
+        é exigente, e você também merece cuidado.
+      </p>
+    </article>
+
+    <article class="info-card">
+      <h3>Quando pedir ajuda</h3>
+      <p>Considere buscar suporte profissional se:</p>
+      <ul>
+        <li>O cansaço está afetando sua saúde física</li>
+        <li>Você não consegue mais realizar suas atividades do dia a dia</li>
+        <li>Sente tristeza profunda ou desesperança</li>
+        <li>Está tendo dificuldade para dormir ou comer</li>
+        <li>Se sente isolado ou sem com quem conversar</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="guide-cta">
+    <h2>Você não está sozinho</h2>
+    <p>
+      Nossa equipe está disponível para apoiar não apenas o paciente,
+      mas toda a família. Se você tiver dúvidas ou precisar de orientação,
+      entre em contato.
+    </p>
+    <a href="/agende/" class="btn btn--primary">
+      Falar com nossa equipe
+    </a>
+  </section>
+</PageLayout>
+
+<style>
+  section {
+    margin-bottom: 3rem;
+  }
+
+  .intro-highlight {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-family: var(--font-serif);
+    margin-bottom: 1rem;
+  }
+
+  /* Info Cards */
+  .info-card {
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .info-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .info-card li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-secondary);
+  }
+
+  .info-card p {
+    color: var(--color-text-secondary);
+  }
+
+  .info-card--highlight {
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .alert-list li {
+    color: var(--color-warning);
+  }
+
+  /* Timeline */
+  .timeline {
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  .timeline h3 {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline > p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .timeline-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  .timeline-content {
+    flex: 1;
+  }
+
+  .timeline-content h4 {
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .timeline-content p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* CTA */
+  .guide-cta {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+  }
+
+  .guide-cta h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-cta p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+</style>

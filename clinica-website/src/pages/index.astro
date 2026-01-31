@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import clinic from '../data/clinic.json';
+---
+
+<BaseLayout
+  title="Início"
+  description="Clínica especializada em oncologia cirúrgica com abordagem humanizada. Cuidamos do ser, não apenas da doença."
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__container">
+      <h1 class="hero__title">
+        Cuidamos de pessoas, não apenas de doenças
+      </h1>
+      <p class="hero__subtitle">
+        Uma abordagem humanizada em oncologia cirúrgica, onde você e sua família
+        são acolhidos em cada etapa do tratamento.
+      </p>
+      <div class="hero__actions">
+        <a href="/agende/" class="btn btn--primary btn--large">
+          Agendar Consulta
+        </a>
+        <a href="/sobre/" class="btn btn--secondary btn--large">
+          Conhecer a Clínica
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Três Caminhos -->
+  <section class="paths section">
+    <div class="container">
+      <h2 class="section__title text-center">Como podemos ajudar?</h2>
+      <p class="section__subtitle text-center text-muted">
+        Escolha o caminho que melhor atende às suas necessidades neste momento.
+      </p>
+
+      <div class="paths__grid">
+        <!-- Caminho 1: Entender -->
+        <article class="path-card">
+          <div class="path-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3 class="path-card__title">Quero Entender</h3>
+          <p class="path-card__description">
+            Está buscando informações sobre sua condição ou tratamento?
+            Temos conteúdo educativo em linguagem acessível.
+          </p>
+          <ul class="path-card__links">
+            <li><a href="/glossario/">Glossário Humanizado</a></li>
+            <li><a href="/especialidades/">Nossas Especialidades</a></li>
+            <li><a href="/guia-acompanhante/">Guia do Acompanhante</a></li>
+          </ul>
+        </article>
+
+        <!-- Caminho 2: Agendar -->
+        <article class="path-card path-card--featured">
+          <div class="path-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h3 class="path-card__title">Quero Agendar</h3>
+          <p class="path-card__description">
+            Pronto para marcar uma consulta? Entre em contato conosco
+            e daremos todo o suporte necessário.
+          </p>
+          <a href="/agende/" class="btn btn--primary">
+            Agendar Consulta
+          </a>
+        </article>
+
+        <!-- Caminho 3: Preparar -->
+        <article class="path-card">
+          <div class="path-card__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <h3 class="path-card__title">Já Sou Paciente</h3>
+          <p class="path-card__description">
+            Já tem consulta marcada? Veja como se preparar para
+            aproveitar ao máximo seu atendimento.
+          </p>
+          <ul class="path-card__links">
+            <li><a href="/prepare-se/">O que trazer para a consulta</a></li>
+            <li><a href="/prepare-se/#formularios">Preencher formulários</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filosofia -->
+  <section class="philosophy section section--alt">
+    <div class="container">
+      <div class="philosophy__content">
+        <h2 class="philosophy__title">Nossa Filosofia</h2>
+        <blockquote class="philosophy__quote">
+          "Não tratamos doenças. Cuidamos de pessoas que estão enfrentando
+          um momento difícil — e de todos que caminham ao seu lado."
+        </blockquote>
+        <p class="philosophy__text">
+          Acreditamos que cada paciente é único, com sua história, seus medos
+          e suas esperanças. Por isso, nossa abordagem vai além do tratamento
+          técnico: acolhemos você e sua família em cada etapa da jornada.
+        </p>
+        <a href="/sobre/" class="btn btn--secondary">
+          Conheça Nossa História
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta section">
+    <div class="container text-center">
+      <h2>Precisa de orientação?</h2>
+      <p class="text-muted">
+        Estamos aqui para ajudar. Entre em contato e tire suas dúvidas.
+      </p>
+      <div class="cta__actions">
+        <a href="/agende/" class="btn btn--primary btn--large">
+          Falar Conosco
+        </a>
+        <a href={`tel:${clinic.contact.phone.replace(/\s/g, '')}`} class="btn btn--secondary btn--large">
+          {clinic.contact.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-surface) 100%);
+    padding: 6rem 1.5rem;
+    text-align: center;
+  }
+
+  .hero__container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+    font-family: var(--font-serif);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  .hero__subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Paths */
+  .section__title {
+    margin-bottom: 0.5rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: 3rem;
+  }
+
+  .paths__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .path-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .path-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .path-card--featured {
+    border-color: var(--color-primary);
+    border-width: 2px;
+  }
+
+  .path-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: var(--color-surface-alt);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  .path-card__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .path-card__description {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .path-card__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .path-card__links li {
+    margin: 0.5rem 0;
+  }
+
+  .path-card__links a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+  }
+
+  .path-card__links a:hover {
+    text-decoration: underline;
+  }
+
+  /* Philosophy */
+  .philosophy__content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .philosophy__title {
+    margin-bottom: 2rem;
+  }
+
+  .philosophy__quote {
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-primary);
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    border: none;
+    line-height: 1.5;
+  }
+
+  .philosophy__text {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  /* CTA */
+  .cta__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 1.5rem;
+    }
+
+    .hero__title {
+      font-size: 2rem;
+    }
+
+    .hero__subtitle {
+      font-size: 1.125rem;
+    }
+
+    .philosophy__quote {
+      font-size: 1.25rem;
+    }
+  }
+</style>

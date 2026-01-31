@@ -1,0 +1,8 @@
+# Robots.txt - Clínica de Oncologia Cirúrgica
+# https://www.clinicaoncologia.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.clinicaoncologia.com.br/sitemap-index.xml

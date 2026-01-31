@@ -1,0 +1,335 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import clinic from '../data/clinic.json';
+---
+
+<PageLayout
+  title="Prepare-se para sua Consulta"
+  description="Saiba o que trazer e como se preparar para aproveitar ao máximo sua consulta na clínica de oncologia."
+  breadcrumbItems={[{ label: 'Prepare-se' }]}
+>
+  <section class="prepare-intro">
+    <p>
+      Uma consulta bem preparada é mais produtiva e menos estressante.
+      Reunimos aqui tudo o que você precisa saber para aproveitar ao máximo
+      seu atendimento.
+    </p>
+  </section>
+
+  <section class="prepare-checklist">
+    <h2>O que trazer para sua consulta</h2>
+
+    <article class="checklist-group">
+      <h3>Documentos essenciais</h3>
+      <ul class="checklist">
+        <li>
+          <input type="checkbox" id="doc1" />
+          <label for="doc1">Documento de identidade com foto (RG ou CNH)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="doc2" />
+          <label for="doc2">CPF</label>
+        </li>
+        <li>
+          <input type="checkbox" id="doc3" />
+          <label for="doc3">Cartão do convênio (se aplicável)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="doc4" />
+          <label for="doc4">Pedido médico ou encaminhamento</label>
+        </li>
+      </ul>
+    </article>
+
+    <article class="checklist-group">
+      <h3>Seu histórico de saúde</h3>
+      <ul class="checklist">
+        <li>
+          <input type="checkbox" id="hist1" />
+          <label for="hist1">Lista de medicamentos atuais (nome, dose, horário)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="hist2" />
+          <label for="hist2">Exames recentes (últimos 6 meses)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="hist3" />
+          <label for="hist3">Laudos de biópsia (se houver)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="hist4" />
+          <label for="hist4">Imagens (TC, RNM, PET-CT) — CD ou acesso online</label>
+        </li>
+        <li>
+          <input type="checkbox" id="hist5" />
+          <label for="hist5">Relatórios de tratamentos anteriores</label>
+        </li>
+      </ul>
+    </article>
+
+    <article class="checklist-group">
+      <h3>Para aproveitar melhor o tempo</h3>
+      <ul class="checklist">
+        <li>
+          <input type="checkbox" id="time1" />
+          <label for="time1">Anote suas dúvidas principais antes da consulta</label>
+        </li>
+        <li>
+          <input type="checkbox" id="time2" />
+          <label for="time2">Traga um acompanhante se desejar (4 ouvidos lembram mais)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="time3" />
+          <label for="time3">Chegue 15 minutos antes do horário marcado</label>
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="prepare-forms" id="formularios">
+    <h2>Preencha os formulários online</h2>
+    <p>
+      Economize tempo no dia da consulta preenchendo seus dados antecipadamente.
+      Os formulários são seguros e levam cerca de 10-15 minutos para completar.
+    </p>
+
+    <div class="forms-grid">
+      <article class="form-card">
+        <h3>Triagem Inicial</h3>
+        <p>Dados básicos e motivo da consulta.</p>
+        <p class="form-card__time">~3 minutos</p>
+        <a href="#" class="btn btn--secondary">Preencher</a>
+      </article>
+
+      <article class="form-card">
+        <h3>Histórico de Saúde</h3>
+        <p>Condições prévias, cirurgias e alergias.</p>
+        <p class="form-card__time">~5 minutos</p>
+        <a href="#" class="btn btn--secondary">Preencher</a>
+      </article>
+
+      <article class="form-card">
+        <h3>Medicações em Uso</h3>
+        <p>Lista completa de medicamentos.</p>
+        <p class="form-card__time">~3 minutos</p>
+        <a href="#" class="btn btn--secondary">Preencher</a>
+      </article>
+    </div>
+
+    <p class="forms-note">
+      Você pode salvar e continuar depois. Os dados são protegidos de acordo
+      com nossa <a href="/politica-privacidade/">Política de Privacidade</a>.
+    </p>
+  </section>
+
+  <section class="prepare-day">
+    <h2>No dia da consulta</h2>
+
+    <div class="day-tips">
+      <article class="tip-card">
+        <h3>Alimentação</h3>
+        <p>
+          Não há restrições específicas para a consulta.
+          Alimente-se normalmente.
+        </p>
+      </article>
+
+      <article class="tip-card">
+        <h3>Vestimenta</h3>
+        <p>
+          Vista-se confortavelmente. Pode ser necessário
+          exame físico durante a consulta.
+        </p>
+      </article>
+
+      <article class="tip-card">
+        <h3>Acompanhante</h3>
+        <p>
+          Recomendamos trazer alguém de confiança.
+          Duas pessoas lembram mais detalhes.
+        </p>
+      </article>
+
+      <article class="tip-card">
+        <h3>Anotações</h3>
+        <p>
+          Sinta-se à vontade para anotar ou gravar
+          (com permissão) as orientações.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="prepare-questions">
+    <h2>Perguntas que você pode querer fazer</h2>
+    <p>
+      É normal ter dúvidas. Aqui estão algumas perguntas que outros pacientes
+      costumam fazer e que podem ajudá-lo:
+    </p>
+
+    <ul class="questions-list">
+      <li>O que os exames mostram sobre minha situação?</li>
+      <li>Quais são as opções de tratamento disponíveis?</li>
+      <li>Qual tratamento você recomenda e por quê?</li>
+      <li>Quais são os riscos e efeitos colaterais possíveis?</li>
+      <li>Como o tratamento vai afetar minha rotina?</li>
+      <li>Quanto tempo dura o tratamento?</li>
+      <li>Há algo que eu possa fazer para melhorar os resultados?</li>
+      <li>Com que frequência precisarei voltar para acompanhamento?</li>
+    </ul>
+  </section>
+
+  <section class="prepare-cta">
+    <h2>Ainda tem dúvidas?</h2>
+    <p>
+      Entre em contato com nossa equipe. Estamos aqui para ajudar.
+    </p>
+    <a href="/agende/" class="btn btn--primary">
+      Falar com a equipe
+    </a>
+  </section>
+</PageLayout>
+
+<style>
+  section {
+    margin-bottom: 3rem;
+  }
+
+  /* Checklist */
+  .checklist-group {
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .checklist-group h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .checklist li:last-child {
+    border-bottom: none;
+  }
+
+  .checklist input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.125rem;
+    accent-color: var(--color-primary);
+  }
+
+  .checklist label {
+    flex: 1;
+    cursor: pointer;
+  }
+
+  /* Forms Grid */
+  .forms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .form-card {
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .form-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-card__time {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem !important;
+  }
+
+  .forms-note {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+
+  /* Day Tips */
+  .day-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .tip-card {
+    background: var(--color-surface-alt);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+
+  .tip-card h3 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .tip-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Questions List */
+  .questions-list {
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .questions-list li {
+    padding: 0.5rem 0;
+    color: var(--color-text-secondary);
+  }
+
+  /* CTA */
+  .prepare-cta {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+  }
+
+  .prepare-cta h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .prepare-cta p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página não encontrada"
+  description="A página que você procura não existe ou foi movida."
+  noindex={true}
+>
+  <div class="error-page">
+    <div class="error-content">
+      <h1>404</h1>
+      <h2>Página não encontrada</h2>
+      <p>
+        A página que você procura não existe ou foi movida.
+        Mas não se preocupe, podemos ajudá-lo a encontrar o que precisa.
+      </p>
+
+      <div class="error-actions">
+        <a href="/" class="btn btn--primary">Ir para a página inicial</a>
+        <a href="/agende/" class="btn btn--secondary">Entrar em contato</a>
+      </div>
+
+      <nav class="error-links">
+        <h3>Páginas mais acessadas:</h3>
+        <ul>
+          <li><a href="/sobre/">Sobre a clínica</a></li>
+          <li><a href="/especialidades/">Especialidades</a></li>
+          <li><a href="/prepare-se/">Prepare-se para sua consulta</a></li>
+          <li><a href="/glossario/">Glossário de termos médicos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+
+  .error-content {
+    max-width: 500px;
+  }
+
+  h1 {
+    font-size: 6rem;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .error-links {
+    text-align: left;
+    background: var(--color-surface-alt);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .error-links h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-secondary);
+  }
+
+  .error-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .error-links li {
+    margin: 0.5rem 0;
+  }
+
+  .error-links a {
+    text-decoration: none;
+  }
+
+  .error-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+</style>

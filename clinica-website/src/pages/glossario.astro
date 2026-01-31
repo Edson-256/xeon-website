@@ -1,0 +1,215 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+// TODO: Migrar para Content Collections quando houver mais termos
+const termos = [
+  {
+    termo: "Biópsia",
+    explicacao: "Procedimento para retirar uma pequena amostra de tecido para análise. É como colher uma \"prova\" do que está acontecendo no seu corpo para que os médicos possam entender melhor e planejar o tratamento.",
+  },
+  {
+    termo: "Estadiamento",
+    explicacao: "Avaliação da extensão da doença no corpo. Usamos uma classificação (de I a IV) para entender o tamanho do tumor e se ele se espalhou para outros lugares. Isso nos ajuda a escolher o melhor tratamento para você.",
+  },
+  {
+    termo: "Quimioterapia",
+    explicacao: "Tratamento com medicamentos que combatem as células do câncer. Pode ser administrada antes da cirurgia (para diminuir o tumor), depois (para eliminar células remanescentes) ou como tratamento principal.",
+  },
+  {
+    termo: "Radioterapia",
+    explicacao: "Tratamento que usa radiação para destruir células cancerígenas. É como uma \"luz invisível\" direcionada ao local do tumor. O procedimento em si é indolor.",
+  },
+  {
+    termo: "Neoadjuvante",
+    explicacao: "Tratamento realizado ANTES da cirurgia principal. Geralmente é quimioterapia ou radioterapia com objetivo de reduzir o tamanho do tumor e facilitar a operação.",
+  },
+  {
+    termo: "Adjuvante",
+    explicacao: "Tratamento realizado APÓS a cirurgia principal. O objetivo é eliminar possíveis células cancerígenas que tenham permanecido no corpo, reduzindo o risco de retorno da doença.",
+  },
+  {
+    termo: "Ressecção",
+    explicacao: "Remoção cirúrgica de uma parte do órgão ou tecido. Por exemplo, \"ressecção hepática\" significa remover uma parte do fígado que contém o tumor.",
+  },
+  {
+    termo: "Margem cirúrgica",
+    explicacao: "A borda de tecido saudável removida junto com o tumor. Queremos margens \"livres\" ou \"negativas\", o que significa que não encontramos células cancerígenas nessa borda — um bom sinal de que removemos todo o tumor.",
+  },
+  {
+    termo: "Metástase",
+    explicacao: "Quando células do câncer original se espalham para outros órgãos do corpo. Isso não significa que o tratamento seja impossível — muitos casos de metástase são tratáveis.",
+  },
+  {
+    termo: "Prognóstico",
+    explicacao: "Uma estimativa de como a doença pode evoluir. É importante lembrar que cada pessoa é única, e estatísticas são apenas orientações gerais, não previsões individuais.",
+  },
+  {
+    termo: "Paliativo",
+    explicacao: "Cuidado focado em qualidade de vida, conforto e controle de sintomas. Pode ser oferecido em qualquer fase do tratamento, não apenas em situações avançadas.",
+  },
+  {
+    termo: "Linfonodo",
+    explicacao: "Pequenas estruturas do sistema imunológico, como \"postos de vigilância\" do corpo. Durante a cirurgia, podemos verificar se o câncer chegou aos linfonodos próximos.",
+  },
+];
+---
+
+<PageLayout
+  title="Glossário Humanizado"
+  description="Termos médicos explicados de forma clara e acessível. Entenda o que os médicos estão dizendo sobre seu tratamento."
+  breadcrumbItems={[{ label: 'Glossário' }]}
+>
+  <section class="glossary-intro">
+    <p>
+      Sabemos que ouvir termos médicos desconhecidos pode ser assustador.
+      Por isso, criamos este glossário com explicações em linguagem simples
+      e acolhedora.
+    </p>
+    <p>
+      Se você encontrar alguma palavra que não entendeu durante sua consulta
+      ou em seus exames, procure aqui. E se não encontrar, pergunte para nós
+      — teremos prazer em explicar.
+    </p>
+  </section>
+
+  <section class="glossary-search">
+    <label for="search" class="sr-only">Buscar termo</label>
+    <input
+      type="search"
+      id="search"
+      placeholder="Digite para buscar um termo..."
+      class="search-input"
+    />
+  </section>
+
+  <section class="glossary-list">
+    <dl class="terms-list" id="terms-list">
+      {termos.map((item) => (
+        <div class="term-item" data-termo={item.termo.toLowerCase()}>
+          <dt class="term-title">{item.termo}</dt>
+          <dd class="term-definition">{item.explicacao}</dd>
+        </div>
+      ))}
+    </dl>
+    <p id="no-results" class="no-results" hidden>
+      Nenhum termo encontrado. <a href="/agende/">Entre em contato</a> para
+      esclarecer sua dúvida.
+    </p>
+  </section>
+
+  <section class="glossary-cta">
+    <h2>Não encontrou o que procurava?</h2>
+    <p>
+      Pergunte para nossa equipe. Ficaremos felizes em explicar qualquer
+      termo ou conceito que não tenha ficado claro.
+    </p>
+    <a href="/agende/" class="btn btn--primary">
+      Entrar em contato
+    </a>
+  </section>
+</PageLayout>
+
+<style>
+  section {
+    margin-bottom: 2rem;
+  }
+
+  /* Search */
+  .search-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  /* Terms List */
+  .terms-list {
+    margin: 0;
+  }
+
+  .term-item {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .term-item[hidden] {
+    display: none;
+  }
+
+  .term-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .term-definition {
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* CTA */
+  .glossary-cta {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .glossary-cta h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .glossary-cta p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('search') as HTMLInputElement;
+  const termsList = document.getElementById('terms-list');
+  const noResults = document.getElementById('no-results');
+  const termItems = termsList?.querySelectorAll('.term-item');
+
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    let hasResults = false;
+
+    termItems?.forEach((item) => {
+      const termo = item.getAttribute('data-termo') || '';
+      const text = item.textContent?.toLowerCase() || '';
+      const matches = termo.includes(query) || text.includes(query);
+
+      if (matches) {
+        item.removeAttribute('hidden');
+        hasResults = true;
+      } else {
+        item.setAttribute('hidden', '');
+      }
+    });
+
+    if (noResults) {
+      noResults.hidden = hasResults || query === '';
+    }
+  });
+</script>

@@ -1,0 +1,326 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import clinic from '../data/clinic.json';
+---
+
+<PageLayout
+  title="Política de Privacidade"
+  description="Saiba como coletamos, usamos e protegemos seus dados pessoais e de saúde, em conformidade com a LGPD."
+  breadcrumbItems={[{ label: 'Política de Privacidade' }]}
+>
+  <section>
+    <p class="last-update">
+      <strong>Última atualização:</strong> [Data a definir]
+    </p>
+
+    <p>
+      A <strong>{clinic.name}</strong> ("nós", "nosso" ou "Clínica") está
+      comprometida em proteger a privacidade e os dados pessoais de nossos
+      pacientes, acompanhantes e visitantes do site. Esta Política de
+      Privacidade explica como coletamos, usamos, armazenamos e protegemos
+      suas informações, em conformidade com a Lei Geral de Proteção de Dados
+      (LGPD - Lei nº 13.709/2018).
+    </p>
+  </section>
+
+  <section>
+    <h2>1. Dados que coletamos</h2>
+
+    <h3>1.1 Dados de identificação</h3>
+    <ul>
+      <li>Nome completo</li>
+      <li>CPF e RG</li>
+      <li>Data de nascimento</li>
+      <li>Endereço</li>
+      <li>Telefone e e-mail</li>
+    </ul>
+
+    <h3>1.2 Dados de saúde</h3>
+    <ul>
+      <li>Histórico médico e familiar</li>
+      <li>Diagnósticos e exames</li>
+      <li>Medicações em uso</li>
+      <li>Informações sobre tratamentos anteriores</li>
+      <li>Dados coletados durante consultas e procedimentos</li>
+    </ul>
+
+    <h3>1.3 Dados de navegação</h3>
+    <ul>
+      <li>Endereço IP</li>
+      <li>Tipo de navegador e dispositivo</li>
+      <li>Páginas visitadas e tempo de permanência</li>
+      <li>Cookies (veja seção específica abaixo)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Como usamos seus dados</h2>
+
+    <h3>2.1 Dados de saúde</h3>
+    <p>
+      Utilizamos seus dados de saúde exclusivamente para:
+    </p>
+    <ul>
+      <li>Prestação de atendimento médico</li>
+      <li>Preparação e acompanhamento de consultas</li>
+      <li>Comunicação sobre seu tratamento</li>
+      <li>Envio de orientações pré e pós-procedimento</li>
+      <li>Cumprimento de obrigações legais (prontuário médico)</li>
+    </ul>
+
+    <h3>2.2 Dados de identificação e contato</h3>
+    <ul>
+      <li>Agendamento e confirmação de consultas</li>
+      <li>Comunicação administrativa</li>
+      <li>Envio de lembretes e orientações</li>
+      <li>Faturamento e documentação fiscal</li>
+    </ul>
+
+    <h3>2.3 Dados de navegação</h3>
+    <ul>
+      <li>Melhoria da experiência no site</li>
+      <li>Análise de uso (de forma anônima e agregada)</li>
+      <li>Segurança e prevenção de fraudes</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Base legal para o tratamento</h2>
+
+    <p>
+      Tratamos seus dados com base nas seguintes hipóteses legais da LGPD:
+    </p>
+
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th>Tipo de dado</th>
+          <th>Base legal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dados de saúde</td>
+          <td>Tutela da saúde (Art. 11, II, f) e cumprimento de obrigação legal</td>
+        </tr>
+        <tr>
+          <td>Dados de identificação</td>
+          <td>Execução de contrato e cumprimento de obrigação legal</td>
+        </tr>
+        <tr>
+          <td>Comunicações não essenciais</td>
+          <td>Consentimento (você pode revogar a qualquer momento)</td>
+        </tr>
+        <tr>
+          <td>Cookies e análise de uso</td>
+          <td>Legítimo interesse (com direito de opt-out)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Compartilhamento de dados</h2>
+
+    <p>
+      Seus dados podem ser compartilhados com:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Hospitais e laboratórios parceiros:</strong> para realização
+        de procedimentos e exames, sempre com seu conhecimento
+      </li>
+      <li>
+        <strong>Outros profissionais de saúde:</strong> quando necessário para
+        seu tratamento (equipe multidisciplinar)
+      </li>
+      <li>
+        <strong>Planos de saúde:</strong> para faturamento, quando aplicável
+      </li>
+      <li>
+        <strong>Autoridades públicas:</strong> quando exigido por lei
+        (notificação compulsória, ordem judicial)
+      </li>
+    </ul>
+
+    <p>
+      <strong>Não vendemos, alugamos ou comercializamos seus dados pessoais.</strong>
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Seus direitos</h2>
+
+    <p>
+      A LGPD garante a você os seguintes direitos sobre seus dados:
+    </p>
+
+    <ul>
+      <li><strong>Acesso:</strong> saber quais dados temos sobre você</li>
+      <li><strong>Correção:</strong> corrigir dados incompletos ou incorretos</li>
+      <li><strong>Eliminação:</strong> solicitar exclusão de dados (quando não houver obrigação legal de retenção)</li>
+      <li><strong>Portabilidade:</strong> receber seus dados em formato estruturado</li>
+      <li><strong>Revogação do consentimento:</strong> retirar seu consentimento quando aplicável</li>
+      <li><strong>Informação:</strong> saber com quem compartilhamos seus dados</li>
+    </ul>
+
+    <p>
+      Para exercer seus direitos, entre em contato com nosso Encarregado
+      de Dados (DPO) pelo e-mail:
+      <a href={`mailto:${clinic.contact.privacyEmail}`}>{clinic.contact.privacyEmail}</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>6. Segurança dos dados</h2>
+
+    <p>
+      Adotamos medidas técnicas e organizacionais para proteger seus dados:
+    </p>
+
+    <ul>
+      <li>Criptografia de dados em trânsito (HTTPS)</li>
+      <li>Acesso restrito a colaboradores autorizados</li>
+      <li>Sistemas protegidos por senha e autenticação</li>
+      <li>Backup regular e seguro</li>
+      <li>Treinamento da equipe sobre privacidade</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Retenção de dados</h2>
+
+    <ul>
+      <li>
+        <strong>Prontuário médico:</strong> mínimo de 20 anos após o último
+        atendimento (Resolução CFM nº 1.821/2007)
+      </li>
+      <li>
+        <strong>Dados fiscais:</strong> conforme legislação tributária aplicável
+      </li>
+      <li>
+        <strong>Dados de navegação:</strong> até 12 meses
+      </li>
+      <li>
+        <strong>Outros dados:</strong> enquanto necessário para a finalidade
+        coletada ou conforme obrigação legal
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Cookies</h2>
+
+    <p>
+      Nosso site utiliza cookies para melhorar sua experiência. Cookies são
+      pequenos arquivos de texto armazenados em seu dispositivo.
+    </p>
+
+    <h3>Tipos de cookies que usamos:</h3>
+    <ul>
+      <li>
+        <strong>Necessários:</strong> essenciais para o funcionamento do site
+      </li>
+      <li>
+        <strong>Análise:</strong> nos ajudam a entender como o site é usado
+        (de forma anônima)
+      </li>
+    </ul>
+
+    <p>
+      Você pode desativar cookies nas configurações do seu navegador, mas
+      isso pode afetar algumas funcionalidades do site.
+    </p>
+  </section>
+
+  <section>
+    <h2>9. Alterações nesta política</h2>
+
+    <p>
+      Esta política pode ser atualizada periodicamente. Quando fizermos
+      alterações significativas, comunicaremos de forma visível no site.
+      Recomendamos que você revise esta página regularmente.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Contato</h2>
+
+    <p>
+      Se você tiver dúvidas sobre esta política ou sobre como tratamos
+      seus dados, entre em contato:
+    </p>
+
+    <address class="contact-info">
+      <p><strong>Encarregado de Dados (DPO):</strong></p>
+      <p>E-mail: <a href={`mailto:${clinic.contact.privacyEmail}`}>{clinic.contact.privacyEmail}</a></p>
+      <p>Telefone: <a href={`tel:${clinic.contact.phone.replace(/\s/g, '')}`}>{clinic.contact.phone}</a></p>
+      <p>{clinic.address.street}, {clinic.address.neighborhood}</p>
+      <p>{clinic.address.city}/{clinic.address.state} - CEP: {clinic.address.postalCode}</p>
+    </address>
+  </section>
+</PageLayout>
+
+<style>
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  .last-update {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9375rem;
+  }
+
+  .legal-table th,
+  .legal-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--color-border);
+  }
+
+  .legal-table th {
+    background: var(--color-surface-alt);
+    font-weight: 600;
+  }
+
+  .legal-table td {
+    vertical-align: top;
+  }
+
+  .contact-info {
+    background: var(--color-surface-alt);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    font-style: normal;
+  }
+
+  .contact-info p {
+    margin: 0.25rem 0;
+  }
+</style>

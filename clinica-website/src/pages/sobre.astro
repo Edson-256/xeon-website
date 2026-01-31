@@ -1,0 +1,180 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import clinic from '../data/clinic.json';
+---
+
+<PageLayout
+  title="Sobre"
+  description="Conheça nossa história, filosofia de cuidado e a equipe que faz parte da clínica de oncologia cirúrgica."
+  breadcrumbItems={[{ label: 'Sobre' }]}
+>
+  <section class="about-intro">
+    <h2>Cuidar do Ser</h2>
+    <p>
+      Nossa clínica nasceu de uma visão: transformar a experiência do tratamento
+      oncológico de um modelo centrado na doença para um modelo centrado no ser humano.
+    </p>
+    <p>
+      Acreditamos que cada paciente é uma pessoa completa, com medos, esperanças,
+      uma história de vida e uma rede de apoio que também precisa de cuidado.
+      Por isso, nossa abordagem integra excelência técnica com acolhimento genuíno.
+    </p>
+  </section>
+
+  <section class="about-doctor">
+    <h2>Corpo Clínico</h2>
+
+    <article class="doctor-card">
+      <div class="doctor-card__info">
+        <h3>{clinic.doctor.name}</h3>
+        <p class="doctor-card__credentials">
+          {clinic.doctor.crm}<br />
+          {clinic.doctor.rqe} - {clinic.doctor.specialty}
+        </p>
+        <p class="doctor-card__bio">
+          <!-- TODO: Adicionar biografia do médico -->
+          Especialista em oncologia cirúrgica com formação em [instituição].
+          Atua com foco em tratamentos minimamente invasivos e abordagem
+          multidisciplinar.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section class="about-values">
+    <h2>Nossos Valores</h2>
+
+    <div class="values-grid">
+      <article class="value-card">
+        <h3>Humanização</h3>
+        <p>
+          Tratamos cada paciente como único, respeitando sua história,
+          seus valores e seu tempo.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <h3>Transparência</h3>
+        <p>
+          Comunicação clara e honesta em cada etapa do tratamento,
+          sem jargões ou informações omitidas.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <h3>Excelência</h3>
+        <p>
+          Atualização constante e busca pelas melhores práticas
+          em oncologia cirúrgica.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <h3>Acolhimento</h3>
+        <p>
+          Cuidado que se estende à família e acompanhantes,
+          reconhecendo seu papel fundamental.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about-structure">
+    <h2>Estrutura e Parcerias</h2>
+    <p>
+      Atuamos em parceria com os principais hospitais e centros de referência
+      em oncologia da região, garantindo acesso a tecnologia de ponta e
+      equipe multidisciplinar completa.
+    </p>
+    <p>
+      Nosso consultório oferece ambiente acolhedor e privativo, pensado
+      para proporcionar conforto durante as consultas.
+    </p>
+  </section>
+
+  <section class="about-cta">
+    <h2>Conheça Nossa Clínica</h2>
+    <p>
+      Ficou com alguma dúvida? Quer saber mais sobre nosso trabalho?
+      Entre em contato ou agende uma visita.
+    </p>
+    <a href="/agende/" class="btn btn--primary">
+      Agendar Consulta
+    </a>
+  </section>
+</PageLayout>
+
+<style>
+  section {
+    margin-bottom: 3rem;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Doctor Card */
+  .doctor-card {
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .doctor-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .doctor-card__credentials {
+    color: var(--color-primary);
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .doctor-card__bio {
+    color: var(--color-text-secondary);
+  }
+
+  /* Values Grid */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .value-card {
+    background: var(--color-surface-alt);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  .value-card h3 {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .value-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    margin: 0;
+  }
+
+  /* CTA */
+  .about-cta {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+  }
+
+  .about-cta h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .about-cta p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+</style>

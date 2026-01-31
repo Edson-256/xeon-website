@@ -1,0 +1,233 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import clinic from '../data/clinic.json';
+---
+
+<PageLayout
+  title="Agende sua Consulta"
+  description="Entre em contato para agendar sua consulta na clínica de oncologia cirúrgica. Atendimento humanizado e acolhedor."
+  breadcrumbItems={[{ label: 'Agende' }]}
+>
+  <section class="contact-intro">
+    <p>
+      Estamos prontos para recebê-lo. Escolha a forma de contato que preferir
+      ou preencha o formulário abaixo. Nossa equipe entrará em contato em
+      até 24 horas úteis.
+    </p>
+  </section>
+
+  <section class="contact-options">
+    <h2>Formas de Contato</h2>
+
+    <div class="contact-grid">
+      <article class="contact-card">
+        <h3>Telefone</h3>
+        <p>
+          <a href={`tel:${clinic.contact.phone.replace(/\s/g, '')}`}>
+            {clinic.contact.phone}
+          </a>
+        </p>
+        <p class="contact-card__note">
+          {clinic.hours.weekdays}
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <h3>WhatsApp</h3>
+        <p>
+          <a
+            href={`https://wa.me/${clinic.contact.whatsapp.replace(/\D/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {clinic.contact.whatsapp}
+          </a>
+        </p>
+        <p class="contact-card__note">
+          Resposta em horário comercial
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <h3>E-mail</h3>
+        <p>
+          <a href={`mailto:${clinic.contact.email}`}>
+            {clinic.contact.email}
+          </a>
+        </p>
+        <p class="contact-card__note">
+          Resposta em até 24h úteis
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact-form" id="formulario">
+    <h2>Formulário de Contato</h2>
+    <p>
+      Preencha os campos abaixo e entraremos em contato para agendar
+      sua consulta.
+    </p>
+
+    <!-- Embed JotForm -->
+    <div class="jotform-container">
+      <p class="jotform-placeholder">
+        <strong>Formulário JotForm será incorporado aqui.</strong><br />
+        ID do formulário: [A ser configurado]
+      </p>
+      <!--
+      TODO: Substituir pelo embed real do JotForm
+      <script type="text/javascript" src="https://form.jotform.com/jsform/FORM_ID"></script>
+      -->
+    </div>
+
+    <p class="form-privacy">
+      Ao preencher este formulário, você concorda com nossa
+      <a href="/politica-privacidade/">Política de Privacidade</a>.
+      Seus dados serão utilizados exclusivamente para agendamento
+      e comunicação sobre sua consulta.
+    </p>
+  </section>
+
+  <section class="contact-location">
+    <h2>Localização</h2>
+
+    <address class="location-address">
+      <p><strong>{clinic.name}</strong></p>
+      <p>{clinic.address.street}</p>
+      {clinic.address.complement && <p>{clinic.address.complement}</p>}
+      <p>
+        {clinic.address.neighborhood} - {clinic.address.city}/{clinic.address.state}
+      </p>
+      <p>CEP: {clinic.address.postalCode}</p>
+    </address>
+
+    <div class="location-map">
+      <!-- TODO: Adicionar mapa (Google Maps embed ou imagem estática) -->
+      <p class="map-placeholder">
+        [Mapa será adicionado aqui]
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-prepare">
+    <h2>Vai marcar sua primeira consulta?</h2>
+    <p>
+      Confira nosso guia de preparação para aproveitar ao máximo
+      seu atendimento.
+    </p>
+    <a href="/prepare-se/" class="btn btn--secondary">
+      O que trazer para a consulta
+    </a>
+  </section>
+</PageLayout>
+
+<style>
+  section {
+    margin-bottom: 3rem;
+  }
+
+  /* Contact Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-card {
+    background: var(--color-surface-alt);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-card h3 {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-card p {
+    margin: 0;
+  }
+
+  .contact-card a {
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .contact-card a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-card__note {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-top: 0.5rem !important;
+  }
+
+  /* JotForm Container */
+  .jotform-container {
+    margin: 2rem 0;
+    padding: 3rem;
+    background: var(--color-surface-alt);
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  .jotform-placeholder {
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .form-privacy {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+
+  /* Location */
+  .location-address {
+    font-style: normal;
+    background: var(--color-surface-alt);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .location-address p {
+    margin: 0.25rem 0;
+  }
+
+  .location-map {
+    background: var(--color-surface-alt);
+    border-radius: 0.5rem;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-placeholder {
+    color: var(--color-text-muted);
+  }
+
+  /* Prepare CTA */
+  .contact-prepare {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+  }
+
+  .contact-prepare h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-prepare p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+</style>
