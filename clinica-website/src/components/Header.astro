@@ -22,183 +22,97 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="header">
-  <div class="header__container">
-    <a href="/" class="header__logo" aria-label="Página inicial">
-      <span class="header__logo-text">{clinic.name}</span>
-    </a>
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0 flex items-center gap-3 group" aria-label="Página inicial">
+        <img 
+          src="/images/logo-edson.jpg" 
+          alt={`Logo ${clinic.name}`} 
+          class="h-12 w-auto object-contain"
+        />
+        <span class="sr-only">{clinic.name}</span>
+      </a>
 
-    <button
-      class="header__menu-toggle"
-      aria-label="Abrir menu"
-      aria-expanded="false"
-      aria-controls="main-nav"
-    >
-      <span class="header__menu-icon"></span>
-    </button>
-
-    <nav id="main-nav" class="header__nav" aria-label="Navegação principal">
-      <ul class="header__nav-list">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-1" aria-label="Navegação principal">
         {navItems.map((item) => (
-          <li class="header__nav-item">
-            <a
-              href={item.href}
-              class:list={[
-                'header__nav-link',
-                { 'header__nav-link--active': isActive(item.href) },
-                { 'header__nav-link--cta': item.isHighlighted }
-              ]}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          </li>
+          <a
+            href={item.href}
+            class:list={[
+              'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200',
+              item.isHighlighted
+                ? 'bg-red-700 text-white hover:bg-red-800 shadow-sm'
+                : isActive(item.href)
+                  ? 'text-red-700 bg-red-50'
+                  : 'text-gray-600 hover:text-red-700 hover:bg-gray-50'
+            ]}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
         ))}
-      </ul>
-    </nav>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button
+          type="button"
+          class="header__menu-toggle p-2 rounded-md text-gray-600 hover:text-red-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Abrir menu principal"
+        >
+          <span class="sr-only">Abrir menu principal</span>
+          <!-- Icon Menu (Hamburger) -->
+          <svg class="h-6 w-6 menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Icon Menu (Close) -->
+          <svg class="h-6 w-6 menu-icon-close hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden hidden bg-white border-b border-gray-100" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'block px-3 py-2 rounded-md text-base font-medium',
+            item.isHighlighted
+              ? 'bg-red-700 text-white hover:bg-red-800'
+              : isActive(item.href)
+                ? 'bg-red-50 text-red-700'
+                : 'text-gray-700 hover:text-red-700 hover:bg-gray-50'
+          ]}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
   </div>
 </header>
 
-<style>
-  .header {
-    background: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .header__container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .header__logo {
-    text-decoration: none;
-    color: var(--color-primary);
-  }
-
-  .header__logo-text {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  .header__menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-  }
-
-  .header__menu-icon {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--color-text);
-    position: relative;
-  }
-
-  .header__menu-icon::before,
-  .header__menu-icon::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--color-text);
-    position: absolute;
-    left: 0;
-  }
-
-  .header__menu-icon::before {
-    top: -7px;
-  }
-
-  .header__menu-icon::after {
-    top: 7px;
-  }
-
-  .header__nav-list {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .header__nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: var(--color-text-secondary);
-    font-size: 0.9375rem;
-    border-radius: 0.375rem;
-    transition: color 0.2s, background 0.2s;
-  }
-
-  .header__nav-link:hover {
-    color: var(--color-primary);
-    background: var(--color-surface-hover);
-  }
-
-  .header__nav-link--active {
-    color: var(--color-primary);
-    font-weight: 500;
-  }
-
-  .header__nav-link--cta {
-    background: var(--color-primary);
-    color: white;
-  }
-
-  .header__nav-link--cta:hover {
-    background: var(--color-primary-dark);
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    .header__menu-toggle {
-      display: block;
-    }
-
-    .header__nav {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
-      padding: 1rem;
-    }
-
-    .header__nav--open {
-      display: block;
-    }
-
-    .header__nav-list {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .header__nav-link {
-      padding: 0.75rem 1rem;
-    }
-  }
-</style>
-
 <script>
   const toggle = document.querySelector('.header__menu-toggle');
-  const nav = document.querySelector('.header__nav');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.querySelector('.menu-icon-open');
+  const iconClose = document.querySelector('.menu-icon-close');
 
   toggle?.addEventListener('click', () => {
-    const isOpen = nav?.classList.toggle('header__nav--open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    
+    toggle.setAttribute('aria-expanded', String(!isExpanded));
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
   });
 </script>

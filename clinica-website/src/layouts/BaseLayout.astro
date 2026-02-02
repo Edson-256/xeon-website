@@ -17,11 +17,11 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1a5f7a" />
+    <meta name="theme-color" content="#b91c1c" />
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,12 +40,17 @@ const currentPath = Astro.url.pathname;
 
     <slot name="head" />
   </head>
-  <body>
-    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  <body class="font-sans text-gray-800 bg-white flex flex-col min-h-screen">
+    <a 
+      href="#main-content" 
+      class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-red-700 focus:text-white focus:px-4 focus:py-2"
+    >
+      Pular para o conteúdo principal
+    </a>
 
     <Header currentPath={currentPath} />
 
-    <main id="main-content">
+    <main id="main-content" class="flex-grow">
       <slot />
     </main>
 
@@ -54,20 +59,3 @@ const currentPath = Astro.url.pathname;
     <slot name="scripts" />
   </body>
 </html>
-
-<style>
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--color-primary);
-    color: white;
-    padding: 8px 16px;
-    z-index: 1000;
-    text-decoration: none;
-  }
-
-  .skip-link:focus {
-    top: 0;
-  }
-</style>

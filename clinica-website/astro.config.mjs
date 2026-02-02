@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // TODO: Substituir pelo domínio real da clínica
 const SITE_URL = 'https://www.clinicaoncologia.com.br';
 
@@ -22,5 +24,7 @@ export default defineConfig({
       cssMinify: true,
       minify: 'esbuild',
     },
+
+    plugins: [tailwindcss()],
   },
 });
