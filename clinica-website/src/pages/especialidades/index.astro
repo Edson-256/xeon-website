@@ -1,22 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 
-// TODO: Migrar para Content Collections
-const especialidades = [
-  {
-    slug: 'oncologia-hepatica',
-    title: 'Oncologia Hepática',
-    description: 'Tratamento cirúrgico de tumores do fígado e vias biliares.',
-    excerpt: 'Cuidado especializado para tumores primários do fígado (hepatocarcinoma) e metástases hepáticas de outros tumores.',
-  },
-  {
-    slug: 'oncologia-coloretal',
-    title: 'Oncologia Coloretal',
-    description: 'Cirurgia para câncer de cólon e reto.',
-    excerpt: 'Tratamento cirúrgico do câncer colorretal, incluindo técnicas minimamente invasivas e preservação funcional.',
-  },
-  // Adicionar mais especialidades conforme necessário
-];
+const especialidades = await getCollection('especialidades');
+const sortedEspecialidades = especialidades.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <PageLayout
@@ -33,13 +20,13 @@ const especialidades = [
   </section>
 
   <section class="specialties-list">
-    {especialidades.map((esp) => (
+    {sortedEspecialidades.map((entry) => (
       <article class="specialty-card">
         <h2 class="specialty-card__title">
-          <a href={`/especialidades/${esp.slug}/`}>{esp.title}</a>
+          <a href={`/especialidades/${entry.slug}/`}>{entry.data.title}</a>
         </h2>
-        <p class="specialty-card__excerpt">{esp.excerpt}</p>
-        <a href={`/especialidades/${esp.slug}/`} class="specialty-card__link">
+        <p class="specialty-card__excerpt">{entry.data.excerpt}</p>
+        <a href={`/especialidades/${entry.slug}/`} class="specialty-card__link">
           Saiba mais
           <span aria-hidden="true">&rarr;</span>
         </a>
@@ -64,9 +51,19 @@ const especialidades = [
     margin-bottom: 3rem;
   }
 
+  .intro p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
   .specialties-list {
     display: grid;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
 
   .specialty-card {
@@ -74,16 +71,21 @@ const especialidades = [
     border-radius: 0.75rem;
     padding: 2rem;
     border-left: 4px solid var(--color-primary);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .specialty-card:hover {
     box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
 
   .specialty-card__title {
     font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
   }
 
   .specialty-card__title a {
@@ -97,15 +99,19 @@ const especialidades = [
 
   .specialty-card__excerpt {
     color: var(--color-text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
   }
 
   .specialty-card__link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
+    color: var(--color-primary);
+    margin-top: auto;
   }
 
   .specialty-card__link:hover {
@@ -114,20 +120,23 @@ const especialidades = [
 
   .cta {
     text-align: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
     background: var(--color-surface-alt);
-    border-radius: 0.75rem;
+    border-radius: 1rem;
+    margin-top: 4rem;
   }
 
   .cta h2 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
   }
 
   .cta p {
     color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
-    max-width: 500px;
+    margin-bottom: 2rem;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
   }
 </style>
