@@ -1,8 +1,8 @@
-# Robots.txt - Clínica de Oncologia Cirúrgica
-# https://www.clinicaoncologia.com.br
+# Robots.txt - Clínica Dr. Edson Michalkiewicz
+# https://www.michalkcare.com
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.clinicaoncologia.com.br/sitemap-index.xml
+Sitemap: https://www.michalkcare.com/sitemap-index.xml

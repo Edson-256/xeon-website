@@ -1,7 +1,7 @@
 {
   "name": "Clínica Dr. Edson Michalkiewicz",
   "tagline": "Cuidando do ser, não apenas da doença",
-  "siteUrl": "https://www.clinicaedson.com.br",
+  "siteUrl": "https://www.michalkcare.com",
 
   "doctor": {
     "name": "Dr. Edson Michalkiewicz",
@@ -11,15 +11,16 @@
   },
 
   "company": {
-    "legalName": "Clínica Dr. Edson Michalkiewicz",
-    "cnpj": "00.000.000/0001-00"
+    "legalName": "EDSON LUIZ MICHALKIEWICZ - CLINICA E SERVICOS MEDICOS EIRELI",
+    "cnpj": "31.763.533/0001-59"
   },
 
   "contact": {
-    "phone": "3016-2003",
-    "whatsapp": "",
-    "email": "contato@clinicaedson.com.br",
-    "privacyEmail": "privacidade@clinicaedson.com.br"
+    "phone": "(44) 3016-2003",
+    "whatsapp": "+5544301620003",
+    "whatsappDisplay": "(44) 3016-2003",
+    "email": "contato@michalkcare.com",
+    "privacyEmail": "privacidade@michalkcare.com"
   },
 
   "address": {

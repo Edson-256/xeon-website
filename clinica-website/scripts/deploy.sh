@@ -12,9 +12,9 @@ set -e
 # =====================================================
 # CONFIGURAÇÕES - Ajustar conforme ambiente
 # =====================================================
-REMOTE_USER="deploy"
-REMOTE_HOST="clinica.server.local"
-REMOTE_PATH="/var/www/clinica/dist"
+REMOTE_USER="edson"
+REMOTE_HOST="187.95.108.109"
+REMOTE_PATH="/var/www/michalkcare/dist"
 BUILD_DIR="./dist"
 
 # =====================================================
@@ -82,7 +82,7 @@ fi
 # =====================================================
 log "Deploy concluído com sucesso!"
 echo ""
-echo "Site disponível em: https://www.clinicaoncologia.com.br"
+echo "Site disponível em: https://www.michalkcare.com"
 echo ""
 echo "Próximos passos:"
 echo "  - Verifique o site no navegador"

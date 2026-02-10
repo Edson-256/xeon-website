@@ -3,8 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
 
-// TODO: Substituir pelo domínio real da clínica
-const SITE_URL = 'https://www.clinicaoncologia.com.br';
+const SITE_URL = 'https://www.michalkcare.com';
 
 export default defineConfig({
   site: SITE_URL,
