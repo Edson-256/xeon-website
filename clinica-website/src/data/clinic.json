@@ -19,8 +19,8 @@
     "phone": "(44) 3016-2003",
     "whatsapp": "+5544301620003",
     "whatsappDisplay": "(44) 3016-2003",
-    "email": "contato@michalkcare.com",
-    "privacyEmail": "privacidade@michalkcare.com"
+    "email": "consultorio_dr_edson@hotmail.com",
+    "privacyEmail": "consultorio_dr_edson@hotmail.com"
   },
 
   "address": {
@@ -34,9 +34,9 @@
   },
 
   "hours": {
-    "weekdays": "Segunda a Sexta: 08h às 18h",
+    "weekdays": "Segunda a Sexta: 9h às 12h e 14h às 18h",
     "saturday": "Sábado: Fechado",
-    "formatted": "Mo-Fr 08:00-18:00"
+    "formatted": "Mo-Fr 09:00-12:00,14:00-18:00"
   },
 
   "social": {
